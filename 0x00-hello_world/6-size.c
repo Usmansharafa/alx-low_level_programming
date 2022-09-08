@@ -5,7 +5,7 @@
  *
  * Description: Prints out sizes of various types
  *
- * Return 0 (Success)
+ * Return: 0 (Success)
  */
 int main(void)
 {
