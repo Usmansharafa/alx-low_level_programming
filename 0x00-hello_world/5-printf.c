@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Description: Prints out "with proper grammar, but the outcome is a piece of art,"
+ * Description: C program using printf
  *
  * Return: 0 (Success)
  */
