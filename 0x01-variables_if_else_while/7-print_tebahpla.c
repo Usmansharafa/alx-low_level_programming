@@ -3,16 +3,18 @@
 /**
  * main - Entry point
  *
- * Description: Prints alphabet in lowercase
+ * Description: Prints alphabet in lowercase and reverse order
  *
- * Return: 0 (Success)
+ * Return: 0 (Always Success)
  */
 int main(void)
 {
-    for (int i = 122; 96 < i; i--)
-    {
-        putchar(i);
-    }
-    putchar('\n');
-    return (0);
+	int i;
+
+	for (i = 122; i > 95; i--)
+	{
+		putchar(i);
+	}
+	putcahr('\n');
+	return (0);
 }
