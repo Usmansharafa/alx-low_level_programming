@@ -3,22 +3,25 @@
 /**
  * main - Entry point
  *
- * Description: Prints all single digits separated by a comma and a space
+ * Description: Prints all single digits separated by a comma and space
  *
- * Return: 0 (Success)
+ * Return: 0 (Always Success)
  */
 int main(void)
 {
-    for (int i = 48; i < 58; i++)
-    {
-        putchar(i);
-        if (i == 57)
-        {
-            continue;
-        }
-        putchar(',');
-        putchar(' ');
-    }
-    putchar('\n');
-    return (0);
+	int i;
+	
+	for (i = 48; i < 58; i++)
+	{
+		putchar(i);
+		if (i == 57)
+		{
+			continue;
+		}
+		putchar(',');
+		putchar(' ');
+	}
+	putchar('\n');
+	return (0);
 }
+
