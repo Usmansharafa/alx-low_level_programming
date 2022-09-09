@@ -1,22 +1,24 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - ENtry point
  *
- * Description: Prints alphabet in lowercase and uppercase
+ * Description: Prints alphabets in lowercase and uppercase
  *
- * Return: 0 (Success)
+ * Return: 0 (Always Success)
  */
 int main(void)
 {
-    for (int i = 97; i < 123; i++)
-    {
-        putchar(i);
-    }
-    for (int j = 65; j < 91; j++)
-    {
-        putchar(j);
-    }
-    putchar('\n');
-    return (0);
+	int i, j;
+
+	for (i = 97; i < 123; i++)
+	{
+		putchar(i);
+	}
+	for (j = 65; j < 91; j++)
+	{
+		putchar(j);
+	}
+	putchar('\n');
+	return (0);
 }
