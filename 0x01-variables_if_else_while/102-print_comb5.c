@@ -3,37 +3,39 @@
 /**
  * main - Entry point
  *
- * Description: Prints all possible combination of two
- * two-digit numbers
+ * Description: Prints all possible different combinations of two digits
  *
  * Return: 0 (Always Success)
  */
+
 int main(void)
 {
-	int i, j, k, l;
+	int firstDigit = 0, seconDigit;
 
-	for (i = 48; i < 58; i++)
+	while (firstDigit <= 99)
 	{
-		for (j = 48; j < 58; j++)
+		seconDigit = firstDigit;
+		while (seconDigit <= 99)
 		{
-			for (k = 48; k < 58; k++)
+			if (seconDigit != firstDigit)
 			{
-				for (l = 48; l < 58; l++)
+				putchar((firstDigit / 10) + 48);
+				putchar((firstDigit % 10) + 48);
+				putchar(' ');
+				putchar((seconDigit / 10) + 48);
+				putchar((seconDigit % 10) + 48);
+
+				if (firstDigit != 98 || seconDigit != 99)
 				{
-					putchar(i);
-					putchar(j);
-					putchar(' ');
-					putchar(k);
-					putchar(l);
 					putchar(',');
 					putchar(' ');
-					continue;
 				}
-				continue;
 			}
-			continue;
+			++seconDigit;
 		}
-		putchar('\n');
-		return (0);
+		++firstDigit;
 	}
+	putchar('\n');
 
+	return (0);
+}
