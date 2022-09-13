@@ -13,8 +13,8 @@ int main(void)
 	unsigned long prev, next, sum;
 	float total;
 
-	prev = 1;
-	next = 2;
+	prev = 0;
+	next = 1;
 
 	while (1)
 	{
