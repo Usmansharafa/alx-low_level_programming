@@ -20,25 +20,25 @@ void times_table(void)
 			{
 				if (j > 0)
 				{
-					putchar(' ');
-					putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
 				}
-				putchar(num + 48);
+				_putchar(num + 48);
 				if (j != 9)
-					putchar(',');
+					_putchar(',');
 			}
 			else if (num >= 10 && num < 100)
 			{
-				putchar(' ');
+				_putchar(' ');
 				first = num / 10;
 				second = num % 10;
-				putchar(first + 48);
-				putchar(second + 48);
+				_putchar(first + 48);
+				_putchar(second + 48);
 				if (j != 9)
-					putchar(',');
+					_putchar(',');
 			}
 			j++;
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
 }
