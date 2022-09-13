@@ -16,7 +16,7 @@ int main(void)
 	next = 2;
 	sum = 3;
 
-	for (count = 0; count < 50; count++)
+	for (count = 0; count < 50; ++count)
 	{
 		if (count == 0)
 		{
