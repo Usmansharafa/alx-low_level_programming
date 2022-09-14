@@ -10,7 +10,7 @@
 int main(void)
 {
 	int count;
-	unsigned long prev, next, sum;
+	unsigned long long prev, next, sum;
 
 	prev = 1;
 	next = 2;
@@ -20,20 +20,20 @@ int main(void)
 	{
 		if (count == 0)
 		{
-			printf("%lu, ", prev);
+			printf("%llu, ", prev);
 		}
 		else if (count == 1)
 		{
-			printf("%lu, ", next);
+			printf("%llu, ", next);
 		}
 		else
 		{
-			printf("%lu, ", sum);
+			printf("%llu, ", sum);
 			prev = next;
 			next = sum;
 			sum = sum + prev;
 		}
 	}
-	printf("%lu\n", sum);
+	printf("%llu\n", sum);
 	return (0);
 }
