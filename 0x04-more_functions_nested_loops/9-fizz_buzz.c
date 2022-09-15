@@ -13,7 +13,7 @@ int main(void)
 {
 	int i;
 
-	i = 0;
+	i = 1;
 	while (i < 101)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
@@ -30,11 +30,11 @@ int main(void)
 		}
 		else
 		{
-			printf("%i", i);
+			printf("%i ", i);
 		}
 
 		i++;
 	}
-	_putchar('\n');
+	putchar('\n');
 	return (0);
 }
