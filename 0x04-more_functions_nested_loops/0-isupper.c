@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 /**
  * _isupper - Tells whether a character is an uppercase alphabet
@@ -11,6 +11,8 @@ include "main.h"
 int _isupper(int c)
 {
 	if (c > 64 && c < 91)
-	       return (1);
+	{
+		return (1);
+	}
 	return (0);
-}	
+}
