@@ -1,6 +1,5 @@
 #include "main.h"
 
-int _strlen(char *s);
 /**
  * puts2 - prints even positioned characters in a string
  *
