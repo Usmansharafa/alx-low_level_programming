@@ -20,8 +20,10 @@ void print_array(int *a, int n)
 	{
 		printf("%i", a[i]);
 		if (i + 1 == n)
+		{
 			printf("\n");
 			continue;
+		}
 		printf(", ");
 	}
 }
