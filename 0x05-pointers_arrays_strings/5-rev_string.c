@@ -1,7 +1,5 @@
 #include "main.h"
 
-void swap(char *a, char *b);
-
 /**
  * rev_string - Reverses a string
  *
@@ -18,8 +16,8 @@ void rev_string(char *s)
 	for (i = 0; i < half; ++i)
 	{
 		temp = s[i];
-		s[i] = s[len - i + 1];
-		s[len - i + 1] = temp;
+		s[i] = s[len - 1 - i];
+		s[len - 1 - i] = temp;
 	}
 
 }
