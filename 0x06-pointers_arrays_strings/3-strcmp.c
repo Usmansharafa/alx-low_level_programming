@@ -16,21 +16,22 @@ int _strcmp(char *s1, char *s2)
 	int i, s1_len, s2_len, count;
 
 	s1_len = _strlen(s1);
-	s2_len = _strlen(s2);
 
-	if (s1_len < s2_len)
-		return (-15);
-	else if (s1_len > s2_len)
-		return (15);
 	count = 0;
 	for (i = 0; i <= s1_len; ++i)
 	{
 		if (s1[i] == s2[i])
 			continue;
 		else if (s1[i] < s2[i])
+		{
 			count = s2[i] - s1[i];
+			break;
+		}
 		else if (s1[i] > s2[i])
+		{
 			count = s1[i] - s2[i];
+			break;
+		}
 	}
 	return (count);
 }
