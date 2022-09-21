@@ -22,14 +22,9 @@ int _strcmp(char *s1, char *s2)
 	{
 		if (s1[i] == s2[i])
 			continue;
-		else if (s1[i] < s2[i])
+		else if (s1[i] != s2[i])
 		{
 			count = s2[i] - s1[i];
-			break;
-		}
-		else if (s1[i] > s2[i])
-		{
-			count = s1[i] - s2[i];
 			break;
 		}
 	}
