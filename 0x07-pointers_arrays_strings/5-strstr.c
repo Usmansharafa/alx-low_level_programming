@@ -12,52 +12,25 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int haystack_len, needle_len, count, i, j, k;
+	int i;
 
-	haystack_len = _strlen(haystack);
-	needle_len = _strlen(needle);
-
-	if (needle_len == 0)
+	if (*needle == 0)
 		return (haystack);
-	i = 0;
-	count = 0;
-	while (i < haystack_len)
+
+	while (*haystack)
 	{
-		if (haystack[i] == needle[0])
+		i = 0;
+
+		if (haystack[i] == needle[i])
 		{
-			++count;
-			k = i + 1;
-			j = 1;
-			while (j < needle_len)
+			do
 			{
-				if (haystack[k] == needle[j])
-				{
-					++count;
-					++k;
-					++j;
-				}
-			}
-			if (count == needle_len)
-				return (haystack + i);
+				if (needle[i + 1] == '\0')
+					return (haystack);
+				i++;
+			} while (haystack[i] == needle[i]);
 		}
-		++i;
+		haystack++;
 	}
-	return (NULL);
-}
-
-/**
- * _strlen - gets the length of a string
- *
- * @s: string whose length is to be found
- *
- * Return: Length of string s
- */
-int _strlen(char *s)
-{
-	int len;
-
-	for (len = 0; s[len] != '\0'; ++len)
-		;
-
-	return (len);
+	return ('\0');
 }
