@@ -18,7 +18,7 @@ unsigned int _strspn(char *s, char *accept)
 	accept_len = _strlen(accept);
 
 	count = 0;
-	for(i = 0; i < s_len; ++i)
+	for (i = 0; i < s_len; ++i)
 	{
 		temp = count;
 		for (j = 0; j < accept_len; ++j)
