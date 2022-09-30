@@ -17,16 +17,6 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	if ((argv[1] != "0" && atoi(argv[1]) == 0))
-	{
-		printf("Error\n");
-		return (1);
-	}
-	if ((argv[2] != "0" && atoi(argv[2]) == 0))
-	{
-		printf("Error\n");
-		return (1);
-	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 	res = num1 * num2;
