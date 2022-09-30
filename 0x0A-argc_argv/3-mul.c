@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	}
 
 	if ((argv[1] != '0' && atoi(argv[1]) == 0) ||
-	(argv[2] != '0' && atoi(argv[2] == 0))
+	(argv[2] != '0' && atoi(argv[2]) == 0)
 	{
 		printf("Error\n");
 		return (1);
