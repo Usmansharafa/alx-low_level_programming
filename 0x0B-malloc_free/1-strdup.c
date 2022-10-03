@@ -9,19 +9,17 @@
 char *_strdup(char *str)
 {
 	char *dup;
-	char tmp;
 	int i, len;
 
 	if (str == NULL)
 		return ('\0');
 	len = _strlen(str);
 
-	dup = malloc(len + 1);
+	dup = malloc(sizeof(char) * (len + 1));
 
 	for (i = 0; i < len; i++)
 	{
-		tmp = str[i];
-		dup[i] = tmp;
+		dup[i] = str[i];
 	}
 
 	dup[len] = '\0';
