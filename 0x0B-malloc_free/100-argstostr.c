@@ -12,13 +12,13 @@ char *argstostr(int ac, char *av[])
 {
 	char *new;
 	int len, i, j, k = 0;
-	
+
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	len = _arrlen(av, ac);
 
-	new = malloc(sizeof(char) * len + ac);
+	new = malloc(sizeof(char) * len + ac + 1);
 	if (new == NULL)
 		return (NULL);
 
@@ -32,6 +32,7 @@ char *argstostr(int ac, char *av[])
 		new[k] = '\n';
 		k++;
 	}
+	new[len + ac + 1] = '\0';
 	return (new);
 }
 
@@ -48,7 +49,7 @@ int _arrlen(char *s[], int count)
 	len = 0;
 	for (i = 0; i < count; i++)
 	{
-		for(j = 0; s[i][j] != '\0'; j++)
+		for (j = 0; s[i][j] != '\0'; j++)
 			len++;
 	}
 	return (len);
