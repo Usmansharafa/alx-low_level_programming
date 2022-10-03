@@ -75,7 +75,7 @@ int wordcount(char *str)
  * @ar: array to free
  * @i: array[i]
  */
-void free_arr(char **ar, int height)
+void free_array(char **ar, int height)
 {
 	if (ar != NULL && height != 0)
 	{
