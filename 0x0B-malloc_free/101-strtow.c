@@ -73,7 +73,7 @@ int wordcount(char *str)
 /**
  * free_array - free arr[i]
  * @ar: array to free
- * @i: array[i]
+ * @height: array[i]
  */
 void free_array(char **ar, int height)
 {
