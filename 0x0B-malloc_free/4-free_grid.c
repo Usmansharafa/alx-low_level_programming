@@ -2,8 +2,7 @@
 
 /**
  * free_grid - Frees dynamically allocated memory for a 2d array
- * @grid: 2d array to be freed
- * @width: Number of columns in grid
+ * @grid: 2d array
  * @height: NUmber of rows in grid
  */
 void free_grid(int **grid, int height)
