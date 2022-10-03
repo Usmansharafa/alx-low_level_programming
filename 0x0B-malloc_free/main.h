@@ -12,5 +12,7 @@ void free_grid(int **grid, int height);
 int _strlen(char *s);
 char *argstostr(int ac, char **av);
 char *strtow(char *str);
+int wordcount(char *str);
+void free_array(char **ar, int height);
 
 #endif /* MAIN_H */
