@@ -70,7 +70,7 @@ Write a function that creates an array of chars, and initializes it with a speci
 
 ```
 julien@ubuntu:~/0x0a. malloc, free$ cat 0-main.c
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -153,7 +153,7 @@ FYI: The standard library provides a similar function: `strdup`. Run `man strdup
 
 ```
 julien@ubuntu:~/0x0a. malloc, free$ cat 1-main.c
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -199,7 +199,7 @@ Write a function that concatenates two strings.
 
 ```
 julien@ubuntu:~/0x0a. malloc, free$ cat 2-main.c
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -245,7 +245,7 @@ Write a function that returns a pointer to a 2 dimensional array of integers.
 
 ```
 julien@ubuntu:~/0x0a. malloc, free$ cat 3-main.c
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -323,7 +323,7 @@ Write a function that frees a 2 dimensional grid previously created by your `all
 
 ```
 julien@ubuntu:~/0x0a. malloc, free$ cat 4-main.c
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
