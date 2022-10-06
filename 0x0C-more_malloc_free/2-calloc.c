@@ -2,7 +2,7 @@
 
 /**
  * _calloc -Allocates memory for an array
- * @nmeb: Number of elements in the array
+ * @nmemb: Number of elements in the array
  * @size: Size of each element of the array
  * Return: A void pointer
  */
@@ -24,7 +24,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
  * @s: Pointer to memory to be filled
  * @b: char to be filled in memory
  * @n: number of bytes of s to fill
- * Return: pointer to memory area s 
+ * Return: pointer to memory area s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
@@ -32,6 +32,6 @@ char *_memset(char *s, char b, unsigned int n)
 
 	for (i = 0; i < n; i++)
 		s[i] = b;
-	
+
 	return (s);
 }
