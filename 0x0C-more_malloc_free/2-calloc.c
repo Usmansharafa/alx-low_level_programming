@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * _calloc -Allocates memory for an array
+ * @nmeb: Number of elements in the array
+ * @size: Size of each element of the array
+ * Return: A void pointer
+ */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *new;
