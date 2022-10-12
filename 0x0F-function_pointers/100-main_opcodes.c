@@ -26,16 +26,18 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-
-	for (i = 0; i < bytes; i++)
+	if (f != NULL)
 	{
-		opcode = *(char *)f;
-		printf("%.2x", opcode);
+		for (i = 0; i < bytes; i++)
+		{
+			opcode = *(char *)f;
+			printf("%.2x", opcode);
 
-		if (i == bytes - 1)
-			continue;
-		printf(" ");
-		f++;
+			if (i == bytes - 1)
+				continue;
+			printf(" ");
+			f++;
+		}
 	}
 	printf("\n");
 	return (0);
