@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
 	int (*f)(int, char **) = main;
 	int i, bytes;
-	char opcode;
+	unsigned char opcode;
 
 	if (argc != 2)
 	{
@@ -26,19 +26,17 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	if (f != NULL)
+	for (i = 0; i < bytes; i++)
 	{
-		for (i = 0; i < bytes; i++)
-		{
-			opcode = *(char *)f;
-			printf("%.2x", opcode);
+		opcode = *(unsigned char *)f;
+		printf("%.2x", opcode);
 
-			if (i == bytes - 1)
-				continue;
-			printf(" ");
-			f++;
-		}
+		if (i == bytes - 1)
+			continue;
+		printf(" ");
+		f++;
 	}
+	
 	printf("\n");
 	return (0);
 }
