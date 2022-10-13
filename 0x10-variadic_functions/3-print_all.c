@@ -1,60 +1,100 @@
 #include "variadic_functions.h"
 
 /**
- * print_all - Prints all arguments
- * @format: Format of arguments
- * @...: Variable number of arguments
- */
-void print_all(const char * const format, ...)
+ * print_char - print a char
+ * @arg: a list of argument pointing
+ * to the character to be printed
+*/
+void print_char(va_list arg)
 {
-	va_list args;
-	int arg_len, i = 0;
-	char *string;
+	char c = va_arg(arg, int);
 
-	arg_len = _strlen(format);
-	va_start(args, format);
-	while (format && format[i])
-	{
-		switch (format[i])
-		{
-		case 'c':
-			printf("%c", (char)va_arg(args, int));
-			break;
-		case 'f':
-			printf("%f", (float)va_arg(args, double));
-			break;
-		case 'i':
-			printf("%i", va_arg(args, int));
-			break;
-		case 's':
-			string = va_arg(args, char *);
-			(string != NULL && string[0] != '\0') ?
-				printf("%s", string) : printf("(nil)");
-			break;
-		default:
-			break;
-		}
-		if (arg_len - i > 1 && (format[i] == 'c' ||
-		format[i] == 'd' || format[i] == 'i' ||
-		format[i] == 'f' || format[i] == 's'))
-			printf(", ");
-		i++;
-	}
-	va_end(args);
-	printf("\n");
+	printf("%c", c);
 }
 
 /**
- * _strlen - Gets the length of a string
- * @s: String whose length is to be found
- * Return: Length of string s
- */
-int _strlen(const char *s)
+ * print_int - print an integer
+ * @arg: a list of argument pointing
+ * to the character to be printed
+*/
+void print_int(va_list arg)
 {
-	int len = 0;
+	int n = va_arg(arg, int);
 
-	while (s && s[len])
-		len++;
+	printf("%d", n);
+}
 
-	return (len);
+/**
+ * print_float - print a float
+ * @arg: a list of argument pointing
+ * to the character to be printed
+*/
+void print_float(va_list arg)
+{
+	float n = va_arg(arg, double);
+
+	printf("%f", n);
+}
+
+/**
+ * print_string - print a string
+ * @arg: a list of argument pointing
+ * to the character to be printed
+*/
+void print_string(va_list arg)
+{
+	char *str = va_arg(arg, char *);
+
+	if (str == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", str);
+}
+
+/**
+ * print_all - a function that prints anything
+ * @format: A string of character representing
+ * the argument types
+ * @...: Arguments to be printed
+ * Description: If any argument not of type char,
+ * int, float or char * is ignored
+*/
+void print_all(const char * const format, ...)
+{
+	va_list ap;
+	int i = 0, j = 0;
+	char *separator = "";
+	printer funcs[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string}
+	};
+
+	va_start(ap, format);
+
+	while (format && format[i])
+	{
+		j = 0;
+		/**
+		 * 4 equals to the number of funcs present
+		 * so if j is less than four and our current
+		 * format is not equal to format in funcs
+		 * then j becomes j + 1
+		 */
+		while (j < 4 && (format[i] != *(funcs[j].symbol)))
+			j++;
+		if (j < 4)
+		{
+			printf("%s", separator);
+			funcs[j].print_func(ap);
+			separator = ", ";
+		}
+		i++;
+	}
+	printf("\n");
+
+	va_end(ap);
 }

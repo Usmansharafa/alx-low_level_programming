@@ -9,6 +9,19 @@ int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
-int _strlen(const char *s);
 void print_all(const char * const format, ...);
+
+/**
+ * struct print - A new data structure for handling
+ * printing
+ * @format: Format representing data type
+ * @f: Function pointer that prints data according to
+ * the format
+ */
+typedef struct print
+{
+	char *format;
+	void (*f)(va_list arg);
+} printer;
+
 #endif /* VARIADIC_FUNCTION_H */
