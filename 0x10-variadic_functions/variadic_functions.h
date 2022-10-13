@@ -14,13 +14,13 @@ void print_all(const char * const format, ...);
 /**
  * struct print - A new data structure for handling
  * printing
- * @format: Format representing data type
+ * @symbol: Symbol representing data type
  * @f: Function pointer that prints data according to
  * the format
  */
 typedef struct print
 {
-	char *format;
+	char *symbol;
 	void (*f)(va_list arg);
 } printer;
 
