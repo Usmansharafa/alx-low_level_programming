@@ -20,9 +20,6 @@ void print_all(const char * const format, ...)
 		case 'c':
 			printf("%c", (char)va_arg(args, int));
 			break;
-		case 'd':
-			printf("%d", va_arg(args, int));
-			break;
 		case 'f':
 			printf("%f", (float)va_arg(args, double));
 			break;
