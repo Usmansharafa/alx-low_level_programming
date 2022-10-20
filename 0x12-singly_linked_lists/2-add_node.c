@@ -1,6 +1,12 @@
 #include "lists.h"
 #include <string.h>
 
+/**
+ * add_node - Adds node to the beginning of a linked list
+ * @head: Address of linked list
+ * @str: String member of node
+ * Return: Address of new node
+ */
 list_t *add_node(list_t **head, const char *str)
 {
 	char *s = strdup(str);
@@ -12,9 +18,12 @@ list_t *add_node(list_t **head, const char *str)
 	if (s == NULL)
 		return (NULL);
 	n = _strlen(s);
+	if (*head == NULL)
+		new->next = NULL;
+	else
+		new->next = *head;
 	new->str = s;
 	new->len = n;
-	new->next = *head;
 	*head = new;
 	return (*head);
 }
@@ -28,7 +37,7 @@ unsigned int _strlen(char *s)
 {
 	unsigned int len;
 
-	for (len = 0; s[len] != '\0'; len++);
-
+	for (len = 0; s[len] != '\0'; len++)
+		;
 	return (len);
 }
