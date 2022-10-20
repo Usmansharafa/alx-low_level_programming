@@ -9,20 +9,19 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	char *s = strdup(str);
 	list_t *new = malloc(sizeof(list_t));
 	unsigned int n;
 
 	if (new == NULL)
 		return (NULL);
-	if (s == NULL)
+	if (str == NULL)
 		return (NULL);
-	n = _strlen(s);
+	n = _strlen(str);
 	if (*head == NULL)
 		new->next = NULL;
 	else
 		new->next = *head;
-	new->str = s;
+	new->str = strdup(str);
 	new->len = n;
 	*head = new;
 	return (*head);
@@ -33,7 +32,7 @@ list_t *add_node(list_t **head, const char *str)
  * @s: String whose length is to be found
  * Return: Length of string s
  */
-unsigned int _strlen(char *s)
+unsigned int _strlen(const char *s)
 {
 	unsigned int len;
 
