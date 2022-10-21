@@ -24,6 +24,7 @@ algorithm section .
 * [0x0D. C - Prepocessor](./0x0D-preprocessor)
 * [0x0E. C - Structures, typedef](./0x0E-structures_typedef)
 * [0x10. C - Variadic functions](./0x10-variadic_functions)
+* [0x12. C - Singly linked lists](./0x12-singly_linked_lists)
 
 ## Requirements
 
