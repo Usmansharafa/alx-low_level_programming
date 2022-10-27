@@ -26,6 +26,12 @@ unsigned int binary_to_uint(const char *b)
 	return (num);
 }
 
+/**
+ * check_binary - Checks whether the binary digit contains any other char
+ * apart from 0 and 1
+ * @b: Binary string to be checked
+ * Return: 1 if it is a binary digit or 0 if not
+ */
 int check_binary(const char *b)
 {
 	int i;
@@ -39,6 +45,11 @@ int check_binary(const char *b)
 	return (1);
 }
 
+/**
+ * _strlen - Gets the length of a string
+ * @b: String whose length is to be found
+ * Return: Length of string b
+ */
 unsigned int _strlen(const char *b)
 {
 	int len;
@@ -48,6 +59,12 @@ unsigned int _strlen(const char *b)
 	return (len);
 }
 
+/**
+ * _pow - Gets the index power of a number
+ * @base: Base number
+ * @index: Index number
+ * Return: Base raised to the power of index
+ */
 unsigned int _pow(unsigned int base, unsigned int index)
 {
 	unsigned int number = 1, i;
