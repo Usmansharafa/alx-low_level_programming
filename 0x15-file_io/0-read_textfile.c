@@ -10,6 +10,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	ssize_t count = 0;
+	ssize_t i;
 	int fd;
 	char buf[1024];
 
@@ -17,8 +18,23 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1 || filename == NULL)
 		return (0);
 	count = read(fd, buf, letters);
-	buf[letters] = '\0';
-	printf("%s", buf);
+	if (count == -1)
+		return (0);
+	buf[count] = '\0';
+	for (i = 0; buf[i] != '\0'; i++)
+		_putchar(buf[i]);
 	close(fd);
 	return (count);
+}
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+        return (write(1, &c, 1));
 }
