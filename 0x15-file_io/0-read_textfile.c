@@ -9,20 +9,28 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t count = 0;
+	ssize_t rcount = 0, wcount = 0;
 	ssize_t i;
 	int fd;
-	char buf[1024];
+	char *buf;
 
 	fd = open(filename, O_RDONLY, 0400);
 	if (fd == -1 || filename == NULL)
 		return (0);
-	count = read(fd, buf, letters);
-	if (count == -1)
+	buf = malloc(sizeof(char) * letters);
+	if (buf == NULL)
+	{
+		free(buf);
 		return (0);
-	buf[count] = '\0';
-	for (i = 0; buf[i] != '\0'; i++)
-		write(1, &buf[i], 1);
+	}
+	rcount = read(fd, buf, letters);
+	if (rcount == -1)
+		return (0);
+	wcount = write(STDOUT_FILENO, buf, rcount);
+	if (wcount == -1 || rcount != wcount)
+		return (0);
+	free(buf);
+	
 	close(fd);
 	return (count);
 }
