@@ -9,7 +9,6 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
-	char ch = '\n';
 	size_t len;
 	ssize_t wcount, lencount;
 
@@ -19,18 +18,11 @@ int create_file(const char *filename, char *text_content)
 	for (len = 0; text_content[len] != '\0'; len++)
 		;
 	lencount = len;
-	if (text_content == NULL)
-	{
-		wcount = write(fd, &ch, 1);
-		if (wcount == -1)
-			return (-1);
-	}
-	else
-	{
-		wcount = write(fd, text_content, len);
-		if (wcount == -1 || wcount != lencount)
-			return (-1);
-	}
+
+	wcount = write(fd, text_content, len);
+	if (wcount == -1 || wcount != lencount)
+		return (-1);
+	
 	close(fd);
 	return (1);
 }
