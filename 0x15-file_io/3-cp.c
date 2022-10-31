@@ -31,6 +31,12 @@ int __exit(int error, char *str, int fd)
 	}
 }
 
+/**
+ * main - Copies the content of a file to another file
+ * @argc: Argument count
+ * @argv: Argumen vector
+ * Return: 0 (Always)
+ */
 int main(int argc, char **argv)
 {
 	int file_from, file_to;
