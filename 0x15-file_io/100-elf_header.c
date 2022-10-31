@@ -1,4 +1,5 @@
 #include "main.h"
+#include <elf.h>
 
 /**
  * check_if_elf - checks if file is an ELF file by checking if it
