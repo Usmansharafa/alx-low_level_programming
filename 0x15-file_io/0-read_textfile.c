@@ -22,19 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	buf[count] = '\0';
 	for (i = 0; buf[i] != '\0'; i++)
-		_putchar(buf[i]);
+		write(1, &buf[i], 1);
 	close(fd);
 	return (count);
-}
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
 }
