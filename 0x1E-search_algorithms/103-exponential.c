@@ -60,10 +60,10 @@ int binsearch(int *arr, int high, int low, int x)
 		mid = (low + high) / 2;
 		if (arr[mid] < x)
 			low = mid + 1;
-		else if (arr[mid] >= x)
-			high = mid - 1;
-		else
+		else if (arr[mid] == x)
 			return (mid);
+		else
+			high = mid - 1;
 	}
 	if (arr[low] == x)
 	{
