@@ -5,9 +5,12 @@ int binsearch(int *arr, int high, int low, int x);
 void printarr(int *arr, int low, int high);
 
 /**
- *
- *
- *
+ * exponential_search - Searches for a value in a sorted array of integers
+ * using the Exponential search algorithm
+ * @array: Pointer to array of integers to be searched
+ * @size: Size of array to be searched
+ * @value: Value to be found in array of integers
+ * Return: The index of the first occurrence of the value if found else -1
  */
 int exponential_search(int *array, size_t size, int value)
 {
@@ -44,7 +47,6 @@ int min(int a, int b)
  * @arr: Array of integers to search
  * @high: Highest index number of array being searched
  * @low: Lowest index number of array being searched
- * @mid: Probe index to carry out divide and conquer
  * @x: Value to search for
  * Return: Index of x if found, else -1
  */
@@ -58,12 +60,10 @@ int binsearch(int *arr, int high, int low, int x)
 		mid = (low + high) / 2;
 		if (arr[mid] < x)
 			low = mid + 1;
-		else if (arr[mid] == x)
-		{
-                	return (mid);
-		}
-		else
+		else if (arr[mid] >= x)
 			high = mid - 1;
+		else
+			return (mid);
 	}
 	if (arr[low] == x)
 	{
