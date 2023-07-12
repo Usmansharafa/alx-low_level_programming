@@ -1,27 +1,42 @@
 #include "search_algos.h"
 
-int binsearch(int *arr, int high, int low, int mid, int x);
+int min(int a, int b);
+int binsearch(int *arr, int high, int low, int x);
 void printarr(int *arr, int low, int high);
 
 /**
- * binary_search - This function searches for a value in a sorted array of
- * integers
- * @array: Array of integers to search
- * @size: Size of array
- * @value: Value to search for
- * Return: Index of value if found, else -1
+ *
+ *
+ *
  */
-int binary_search(int *array, size_t size, int value)
+int exponential_search(int *array, size_t size, int value)
 {
-	int low, high, mid, index;
+	int bound = 1, binlow, binhigh;
 
-	if (!array)
+	if (!array || !size)
 		return (-1);
-	low = 0;
-	high = (int)size - 1;
-	mid = (low + high) / 2;
-	index = binsearch(array, high, low, mid, value);
-	return (index);
+	while (bound < (int)size && array[bound] < value)
+	{
+		printf("Value checked array[%d] = [%d]\n", bound, array[bound]);
+		bound *= 2;
+	}
+	binlow = bound / 2;
+	binhigh = min(bound + 1, (int)size) - 1;
+	printf("Value found between indexes [%d] and [%d]\n", binlow, binhigh);
+	return (binsearch(array, binhigh, binlow, value));
+}
+
+/**
+ * min - Finds the minimum of two values
+ * @a: First number
+ * @b: Second number
+ * Return: The smaller of a and b
+ */
+int min(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
 }
 
 /**
@@ -33,14 +48,20 @@ int binary_search(int *array, size_t size, int value)
  * @x: Value to search for
  * Return: Index of x if found, else -1
  */
-int binsearch(int *arr, int high, int low, int mid, int x)
+int binsearch(int *arr, int high, int low, int x)
 {
+	int mid = (low + high) / 2;
+
 	while (low < high)
 	{
 		printarr(arr, low, high);
 		mid = (low + high) / 2;
 		if (arr[mid] < x)
 			low = mid + 1;
+		else if (arr[mid] == x)
+		{
+                	return (mid);
+		}
 		else
 			high = mid - 1;
 	}
