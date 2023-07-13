@@ -21,9 +21,9 @@ int exponential_search(int *array, size_t size, int value);
  */
 typedef struct listint_s
 {
-    int n;
-    size_t index;
-    struct listint_s *next;
+	int n;
+	size_t index;
+	struct listint_s *next;
 } listint_t;
 
 #endif /* SEARCH_ALGOS_H */
